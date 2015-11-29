@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Ng-ykn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJW-Ng-ykn">
                                 <rect key="frame" x="61" y="92" width="473" height="74"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTB-Fa-83Q">
-                                <rect key="frame" x="74" y="215" width="446" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTB-Fa-83Q">
+                                <rect key="frame" x="115" y="283" width="371" height="35"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.35705959796905518" green="0.93458741903305054" blue="0.16220858693122864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
@@ -36,7 +36,7 @@
                                     <action selector="showMeBus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fr-rn-HBa"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Today is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woU-Kv-YXH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woU-Kv-YXH">
                                 <rect key="frame" x="21" y="28" width="63" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -47,10 +47,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qJW-Ng-ykn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M35-N5-MRs"/>
-                            <constraint firstItem="woU-Kv-YXH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T7X-94-0dh"/>
-                            <constraint firstItem="qJW-Ng-ykn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="72" id="kUb-wR-Fzt"/>
-                            <constraint firstItem="FTB-Fa-83Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zWb-VV-Lzo"/>
+                            <constraint firstItem="FTB-Fa-83Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3rJ-3e-Ybx"/>
+                            <constraint firstItem="FTB-Fa-83Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cn1-HD-aug"/>
                         </constraints>
                     </view>
                     <connections>
