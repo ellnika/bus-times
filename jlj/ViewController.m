@@ -27,7 +27,7 @@
    NSURLRequest *request = [NSURLRequest requestWithURL:
                            [NSURL URLWithString:@"https://api.tfl.gov.uk/Line/323/Arrivals?app_id=818ded17&app_key=6d5e22813ba9aa70bb6d2f30a32b82ef"]];
 
-    NSURLSession *session = [NSURLSession sharedSession];
+    //NSURLSession *session = [NSURLSession sharedSession];
   
     
     /* I need to update it to the newer one
@@ -91,12 +91,12 @@
                             
                             
                 self.view.backgroundColor=[UIColor brownColor];
+  
     
-    
-    self.dayLabel.text=[NSString stringWithFormat:[dateFormatter stringFromDate:[NSDate date]]];
-        
+    self.dayLabel.text=[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
+
     }
-   
+
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -110,7 +110,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError");
-    NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+    NSLog(@"Connection failed:%@",[error description]);
 }
 
 
