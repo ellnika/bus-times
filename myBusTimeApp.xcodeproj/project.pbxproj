@@ -15,6 +15,7 @@
 		BDAC8ED41BEF911C0077217E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDAC8ED21BEF911C0077217E /* LaunchScreen.storyboard */; };
 		BDAC8EDF1BEF911C0077217E /* jljTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAC8EDE1BEF911C0077217E /* jljTests.m */; };
 		BDAC8EEA1BEF911C0077217E /* jljUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAC8EE91BEF911C0077217E /* jljUITests.m */; };
+		BDB6E86E1C0F8A2800E7714F /* BusTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = BDB6E86D1C0F8A2800E7714F /* BusTimes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		BDAC8EE51BEF911C0077217E /* myBusTimeApp.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myBusTimeApp.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAC8EE91BEF911C0077217E /* jljUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jljUITests.m; sourceTree = "<group>"; };
 		BDAC8EEB1BEF911C0077217E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDB6E86C1C0F8A2800E7714F /* BusTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusTimes.h; sourceTree = "<group>"; };
+		BDB6E86D1C0F8A2800E7714F /* BusTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusTimes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		BDAC8EC31BEF911C0077217E /* jlj */ = {
 			isa = PBXGroup;
 			children = (
+				BDB6E86B1C0F89E200E7714F /* Model */,
 				BDAC8EC71BEF911C0077217E /* AppDelegate.h */,
 				BDAC8EC81BEF911C0077217E /* AppDelegate.m */,
 				BDAC8ECA1BEF911C0077217E /* ViewController.h */,
@@ -138,6 +142,15 @@
 				BDAC8EEB1BEF911C0077217E /* Info.plist */,
 			);
 			path = jljUITests;
+			sourceTree = "<group>";
+		};
+		BDB6E86B1C0F89E200E7714F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BDB6E86C1C0F8A2800E7714F /* BusTimes.h */,
+				BDB6E86D1C0F8A2800E7714F /* BusTimes.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAC8ECC1BEF911C0077217E /* ViewController.m in Sources */,
+				BDB6E86E1C0F8A2800E7714F /* BusTimes.m in Sources */,
 				BDAC8EC91BEF911C0077217E /* AppDelegate.m in Sources */,
 				BDAC8EC61BEF911C0077217E /* main.m in Sources */,
 			);
