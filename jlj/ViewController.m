@@ -41,47 +41,46 @@
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"EEEE"];
-        NSLog(@"%@", [dateFormatter stringFromDate:[NSDate date]]);
+        NSString *lookup=[dateFormatter stringFromDate:[NSDate date]];
         
-        switch
+        typedef void (^CaseBlock)();
         
-        ([dateFormatter stringFromDate:[NSDate date]])
+        NSDictionary *d=@{
+                          @"Monday":
+                             ^{
+                                  self.view.backgroundColor=[UIColor brownColor];
+                              },
+                          @"Tuesday":
+    
+                              ^{
+                                  self.view.backgroundColor=[UIColor yellowColor];
+                              },
+                          @"Wednesday":
+                              
+                              ^{
+                                  self.view.backgroundColor=[UIColor blueColor];
+                              },
+                          @"Thursday":
+                              
+                              ^{
+                                  self.view.backgroundColor=[UIColor purpleColor];
+                              },
+                          @"Friday":
+                              
+                              ^{
+                                  self.view.backgroundColor=[UIColor greenColor];
+                              },
+                          
+                          };
         
-        {
-            case @"Monday":
-                
-                self.view.backgroundColor=[UIColor blueColor];
-                
-            case  @"Tuesday":
-                
-                self.view.backgroundColor=[UIColor greenColor];
-                
-            case  @"Wednesday":
-                
-                
-                self.view.backgroundColor=[UIColor yellowColor];
-                
-            case @"Thuesday":
-                
-                
-                self.view.backgroundColor=[UIColor purpleColor];
-                
-                
-            case @"Friday":
-                
-                
-                self.view.backgroundColor=[UIColor orangeColor];
-                
-                
-            default:
-                
-                self.view.backgroundColor=[UIColor brownColor];
-                
-                
-                self.dayLabel.text=[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
+        CaseBlock c = d[lookup];
+        if (c) c(); else { self.view.backgroundColor=[UIColor grayColor]; }
+        
+
+        self.dayLabel.text=[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
                 
         }
-        
-    }
+
+
 
       @end
