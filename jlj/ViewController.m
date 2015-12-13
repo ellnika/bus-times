@@ -24,7 +24,9 @@
     
     [self setBackgroundColour];
     self.bus=[[BusTimes alloc]init  ];
-    [self.bus startGetBusTimes];
+    [self.bus fetchFeed];
+    
+    
 }
 
 

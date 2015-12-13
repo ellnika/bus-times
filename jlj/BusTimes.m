@@ -10,44 +10,39 @@
 
 @implementation BusTimes
 
--(void)startGetBusTimes{
+-(void)fetchFeed{
     
-    self.responseData = [NSMutableData data];
+    //The NSURLSession is created with configuration, a delegate and a delagate queue. The defaults for these arguments are what you want for this appliction. You get a default configuration and pass that in for the first argument. For the second and fird arguments you simply pass in nill to get the defaults
+    NSURLSessionConfiguration *config=[NSURLSessionConfiguration defaultSessionConfiguration];
+    //i think its better if i move this code _session when i create bus object?
+    _session=[NSURLSession sessionWithConfiguration:config
+                                           delegate:nil
+                                      delegateQueue:nil];
+    NSString *requestString=@"https://api.tfl.gov.uk/Line/323/Arrivals?app_id=818ded17&app_key=6d5e22813ba9aa70bb6d2f30a32b82ef";
+    NSURL *url=[NSURL URLWithString:requestString];
+    NSURLRequest *req  = [NSURLRequest requestWithURL:url];
+ 
+    NSURLSessionDataTask *dataTask =[self.session  dataTaskWithRequest:req completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+     NSArray *jsonObject=[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+     self.busesTimes=jsonObject;
+     NSLog(@"hello %@", jsonObject);
+     
+    }];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:
-                             [NSURL URLWithString:@"https://api.tfl.gov.uk/Line/323/Arrivals?app_id=818ded17&app_key=6d5e22813ba9aa70bb6d2f30a32b82ef"]];
-    
-    
-    [NSURLConnection  connectionWithRequest: request delegate:self];
-    
-
-}
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
-    NSLog(@"Connection failed:%@",[error description]);
+    [dataTask resume];
 }
 
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %lu bytes of data",[self.responseData length]);
-    
-}
 
 -(NSArray*)getBusTimes{
     // convert to JSON
     
+    NSArray *busTimes;
+    busTimes=_busesTimes;
 
-   return [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:0];
+    
+    return busTimes;
 }
 
 @end

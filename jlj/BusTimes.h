@@ -10,7 +10,8 @@
 
 @interface BusTimes : NSObject
 @property (nonatomic, strong) NSMutableData *responseData;
-
--(void)startGetBusTimes;
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, copy) NSArray *busesTimes;
+-(void)fetchFeed;
 -(NSArray*)getBusTimes;
 @end
